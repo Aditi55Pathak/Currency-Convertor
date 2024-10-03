@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter App</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="theme-selector">
+        <label for="theme">Theme:</label>
+        <select id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <h1>Currency Converter App</h1>
+        
+        <div class="converter-box">
+            <div class="input-group">
+                <input type="number" id="amount" placeholder="Amount" value="1">
+                <div class="currency-selectors">
+                    <select id="fromCurrency"></select>
+                    <button id="swapBtn"><i class="fas fa-exchange-alt"></i></button>
+                    <select id="toCurrency"></select>
+                </div>
+            </div>
+            
+            <button id="convertBtn">Convert</button>
+            
+            <div id="result" class="result-box hidden">
+                <span id="resultText"></span>
+                <button id="favoriteBtn"><i class="far fa-star"></i></button>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="history">
+                    <i class="fas fa-history"></i> History
+                </button>
+                <button class="tab-btn" data-tab="favorites">
+                    <i class="fas fa-star"></i> Favorites
+                </button>
+            </div>
+            
+            <div class="tab-content active" id="history">
+                <h2>Recent Conversions</h2>
+                <div id="historyList" class="list"></div>
+            </div>
+            
+            <div class="tab-content" id="favorites">
+                <h2>Favorite Conversions</h2>
+                <div id="favoritesList" class="list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

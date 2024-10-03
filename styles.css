@@ -1,0 +1,237 @@
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1d4ed8;
+  --background-color: #f3f4f6;
+  --card-background: #ffffff;
+  --text-color: #1f2937;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Theme Styles */
+body.dark-theme {
+  --primary-color: #3b82f6;
+  --secondary-color: #2563eb;
+  --background-color: #1f2937;
+  --card-background: #374151;
+  --text-color: #f3f4f6;
+  --border-color: #4b5563;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+body.blue-theme {
+  --primary-color: #06b6d4;
+  --secondary-color: #0891b2;
+  --background-color: #ecfeff;
+  --card-background: #ffffff;
+  --text-color: #164e63;
+  --border-color: #a5f3fc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.purple-theme {
+  --primary-color: #8b5cf6;
+  --secondary-color: #7c3aed;
+  --background-color: #f3f4f6;
+  --card-background: #ffffff;
+  --text-color: #5b21b6;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.theme-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-selector select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-background);
+  color: var(--text-color);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px var(--shadow-color);
+}
+
+.converter-box {
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+  box-shadow: inset 0 2px 4px var(--shadow-color);
+}
+
+.currency-selectors {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.currency-selectors select {
+  flex: 1;
+}
+
+#swapBtn {
+  padding: 12px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+#convertBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+#convertBtn:hover {
+  background-color: var(--secondary-color);
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.result-box.hidden {
+  display: none;
+}
+
+#favoriteBtn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Tabs */
+.tabs {
+  margin-top: 30px;
+}
+
+.tab-buttons {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.tab-btn.active {
+  border-bottom-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.list-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Currency Icons */
+.currency-option {
+  display: flex;
+  align-items: center;
+}
+
+.currency-option img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .container {
+      padding: 10px;
+  }
+  
+  .currency-selectors {
+      flex-direction: column;
+  }
+  
+  #swapBtn {
+      width: 100%;
+  }
+}
